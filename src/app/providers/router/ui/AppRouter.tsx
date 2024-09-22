@@ -1,5 +1,3 @@
-import { AboutPage } from "pages/AboutPage"
-import { MainPage } from "pages/MainPage"
 import { Suspense } from "react"
 import { Route, Routes } from "react-router-dom"
 import { routeConfig } from "shared/config/routeConfig/routeConfig"
@@ -15,8 +13,6 @@ const AppRouter = () => {
                         </div>
                     } path={path}/>
                 ))}
-                {/* <Route path={'/about'} element={<AboutPage />} />
-                <Route path={'/'} element={<MainPage />} /> */}
             </Routes>
         </Suspense>
     )
