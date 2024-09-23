@@ -1,5 +1,9 @@
 {
     "Hello everyone": "Всем приветик",
     "Translate": "Перевод",
-    "Language": "Английский"
+    "Language": "Английский",
+    "Page not found": "Страница не найдена",
+    "Something went wrong": "Что-то пошло не так",
+    "Reload page": "Перезагрузить страницу",
+    "Throw error": "Выбросить ошибку"
 }

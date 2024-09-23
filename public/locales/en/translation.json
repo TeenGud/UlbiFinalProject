@@ -1,5 +1,9 @@
 {
     "Hello everyone": "Hello everyone",
     "Translate": "Translate",
-    "Language": "Russian"
+    "Language": "Russian",
+    "Page not found": "Page not found",
+    "Something went wrong": "Something went wrong",
+    "Reload page": "Reload page",
+    "Throw error": "Throw error"
 }
