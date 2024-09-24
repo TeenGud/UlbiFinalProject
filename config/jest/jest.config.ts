@@ -4,6 +4,7 @@
  */
 
 import type {Config} from 'jest';
+import path from 'path';
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
@@ -141,7 +142,9 @@ const config: Config = {
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
-
+  modulePaths: [
+    `<rootDir>src`
+  ],
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
 
@@ -158,6 +161,11 @@ const config: Config = {
   testMatch: [
     `<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)`
   ],
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+  moduleNameMapper: {
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '\\.(css|scss)$': 'identity-obj-proxy',
+  },
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
