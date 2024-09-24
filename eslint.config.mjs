@@ -24,5 +24,15 @@ export default [
       }
     }
   },
-  i18next.configs['flat/recommended']
+  i18next.configs['flat/recommended'],
+  // {
+  //   overrides: [
+  //     {
+  //       files: ['**/src/**/*.test.{ts,tsx}'],
+  //       rules: {
+  //         'i18next/no-literal-string': 'off'
+  //       }
+  //     }
+  //   ]
+  // }
 ];
