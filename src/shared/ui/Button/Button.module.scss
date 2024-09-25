@@ -1,4 +1,4 @@
-@import '../../../app/styles/index.scss';
+@import '../../../app/styles/index';
 
 
 .Button {
@@ -12,6 +12,7 @@
     background: none;
     outline: none;
 }
+
 .outline {
     padding: 10px 15px;
     border: 1px solid var(--secondary-color);
