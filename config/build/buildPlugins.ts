@@ -9,7 +9,6 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
         new HTMLWebpackPlugin({
             template: paths.html
         }),
-        new BundleAnalyzerPlugin(),
         new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
@@ -22,6 +21,7 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
     ]
     if(isDev) {
         plugins.push(new webpack.HotModuleReplacementPlugin())
+        plugins.push(new BundleAnalyzerPlugin())
     }
     return plugins
 }
