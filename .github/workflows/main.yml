@@ -13,18 +13,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-      - name: install modules
-        run: npm install
-      - name: build production project
-        run: npm run build:prod
-      - name: linting
-        run: npm run eslint
-      - name: linting stylelint
-        run: npm run stylelint
-      - name: testing
-        run: npm run test
-
+      - run: npm install 
+        name: building
+      - run: npm run build:prod
+        name: eslint
+      - run: npm run eslint
+        name: styleling
+      - run: npm run stylelint
+        name: testing
+      - run: npm run test
