@@ -12,8 +12,8 @@
     "stylelint": "stylelint **/*.scss",
     "stylelint:fix": "stylelint **/*.scss --fix",
     "test": "jest --config ./config/jest/jest.config.ts",
-    "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "build-storybook": "storybook build -c ./config/storybook",
+    "storybook": "start-storybook dev -p 6006 -c ./config/storybook",
+    "build-storybook": "build-storybook -c ./config/storybook",
     "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static"
   },
   "author": "",
@@ -70,6 +70,7 @@
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
+    "storybook": "^6.4.19",
     "style-loader": "^3.3.1",
     "stylelint": "^14.5.3",
     "stylelint-config-standard-scss": "^3.0.0",

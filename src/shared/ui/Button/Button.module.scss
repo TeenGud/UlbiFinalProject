@@ -1,5 +1,6 @@
-@import '../../../app/styles/index';
-
+// @import 'app/styles/index.scss';
+// @import 'app/styles/themes/dark.scss';
+// @import 'app/styles/themes/light.scss';
 
 .Button {
     cursor: pointer;
@@ -16,7 +17,7 @@
 .outline {
     padding: 10px 15px;
     border: 1px solid var(--secondary-color);
-    color: deeppink;
+    color: var(--secondary-color);
     border-radius: 12px;
     background: none;
 }
