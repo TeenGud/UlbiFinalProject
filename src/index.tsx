@@ -8,9 +8,9 @@ import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 
 const domNode = document.getElementById('root');
 render(<BrowserRouter>
-         <ErrorBoundary>
-            <ThemeProvider>                 
-                <App />             
-            </ThemeProvider>         
-        </ErrorBoundary>     
-    </BrowserRouter>, domNode);
+    <ErrorBoundary>
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
+    </ErrorBoundary>
+       </BrowserRouter>, domNode);

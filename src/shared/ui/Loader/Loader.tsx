@@ -1,7 +1,7 @@
-import './Loader.scss'
+import './Loader.scss';
 
-export const Loader = () => {
+export function Loader() {
     return (
-        <div className="lds-heart"><div></div></div>
-    )
+        <div className="lds-heart"><div /></div>
+    );
 }
