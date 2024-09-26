@@ -1,42 +1,56 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-import { Button, ThemeButton } from './Button';
-import '../../../app/styles/index.scss';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Theme } from 'app/providers/ThemeProvider'
+import { Button, ThemeButton } from './Button'
 
-const meta = {
-  title: 'shared/Button',
-  component: Button,
-  parameters: {
-    layout: 'centered',
-  },
+export default {
+    title: 'shared/Button',
+    component: Button,
+    argTypes: {
+        backgroundColor: { control: 'color' }
+    },
+} as ComponentMeta<typeof Button>
 
-  tags: ['autodocs'],
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
-  argTypes: {
-    color: { control: 'color' }
-  },
+export const Primary = Template.bind({})
+Primary.args = {
+    children: "Text"
+}
 
-  args: { onClick: fn() },
-} satisfies Meta<typeof Button>;
+export const Clear = Template.bind({})
+Clear.args = {
+    children: "Text",
+    theme: ThemeButton.CLEAR,
+}
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export const Outline = Template.bind({})
+Outline.args = {
+    children: "Text",
+    theme: ThemeButton.OUTLINE,
+}
 
-export const Primary: Story = {
-  args: {
-    children: 'Text'
-  },
-};
+export const OutlineDark = Template.bind({})
+OutlineDark.args = {
+    children: "Text",
+    theme: ThemeButton.OUTLINE,
+}
+// OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const Clear: Story = {
-  args: {
-    children: 'Text',
-    theme: ThemeButton.CLEAR
-  },
-};
-export const Outline: Story = {
-  args: {
-    children: 'Text',
-    theme: ThemeButton.OUTLINE
-  },
-};
+export const BackgroundTheme = Template.bind({})
+BackgroundTheme.args = {
+    children: "Text",
+    theme: ThemeButton.BACKGROUND,
+}
+
+export const BackgroundInverted = Template.bind({})
+BackgroundInverted.args = {
+    children: "Text",
+    theme: ThemeButton.BACKGROUND_INVERTED,
+}
+
+export const Square = Template.bind({})
+Square.args = {
+    children: ">",
+    theme: ThemeButton.BACKGROUND,
+    square: true
+}
