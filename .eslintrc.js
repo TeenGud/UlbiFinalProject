@@ -34,7 +34,7 @@ module.exports = {
         'no-shadow': 'off',
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
-        'linebreak-style': ['error', 'windows'],
+        'linebreak-style': ['error', 'unix]'],
         'max-len': ['error', { code: 320 }],
     },
     overrides: [
