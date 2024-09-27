@@ -13,15 +13,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+        name: npm install
       - run: npm install 
+
         name: building
       - run: npm run build:prod
 
-      #   name: eslint
-      # - run: npm run eslint
+        name: eslint
+      - run: npm run eslint
 
         name: styleling
-      - run: npm run stylelint:fix
       - run: npm run stylelint
 
         name: testing

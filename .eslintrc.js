@@ -1,7 +1,7 @@
 module.exports = {
     env: {
         browser: true,
-        es2021: true,
+        es2016: true,
     },
     extends: [
         'plugin:react/recommended',
@@ -35,20 +35,20 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'linebreak-style': ['error', 'windows'],
-        'max-len': ["error", { "code": 320 }]
+        'max-len': ['error', { code: 320 }],
     },
-    "overrides": [
+    overrides: [
         {
-            "files": [
-                "**/*.test.ts",
-                "**/*.test.tsx"
+            files: [
+                '**/*.test.ts',
+                '**/*.test.tsx',
             ],
-            "env": {
-                "jest": true
-            }
-        }
+            env: {
+                jest: true,
+            },
+        },
     ],
-    "globals": {
-        "__IS_DEV__": true
-    }
+    globals: {
+        __IS_DEV__: true,
+    },
 };
