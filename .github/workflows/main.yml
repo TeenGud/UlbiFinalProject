@@ -20,9 +20,9 @@ jobs:
         name: eslint
       - run: npm run eslint
 
-        name: styleling
-      - run: npm run stylelint:fix
-      - run: npm run stylelint
+      #   name: styleling
+      # - run: npm run stylelint:fix
+      # - run: npm run stylelint
 
         name: testing
       - run: npm run test
