@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-underscore-dangle */
 declare module '*.scss' {
   interface IClassNames {
     [className: string]: string

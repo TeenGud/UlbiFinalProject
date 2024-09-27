@@ -1,28 +1,28 @@
 module.exports = {
     env: {
         browser: true,
-        es2021: true
+        es2021: true,
     },
     extends: [
         'plugin:react/recommended',
-        'airbnb'
+        'airbnb',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
-            jsx: true
+            jsx: true,
         },
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
     plugins: [
         'react',
-        '@typescript-eslint'
+        '@typescript-eslint',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
-        'react/jsx-filename-extension': [2, {"extensions": [".js", ".jsx", ".tsx"]}],
+        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'warn',
@@ -34,6 +34,21 @@ module.exports = {
         'no-shadow': 'off',
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
-        'linebreak-style': ["error", "windows"]
+        'linebreak-style': ['error', 'windows'],
+        'max-len': ["error", { "code": 320 }]
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.test.ts",
+                "**/*.test.tsx"
+            ],
+            "env": {
+                "jest": true
+            }
+        }
+    ],
+    "globals": {
+        "__IS_DEV__": true
     }
-}
+};

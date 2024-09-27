@@ -3,7 +3,6 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 import AboutPage from './AboutPage';
 
-
 export default {
     title: 'pages/AboutPage',
     component: AboutPage,
@@ -12,15 +11,15 @@ export default {
     },
 } as ComponentMeta<typeof AboutPage>;
 
-const Template: ComponentStory<typeof AboutPage> = (args) => <AboutPage  />;
+const Template: ComponentStory<typeof AboutPage> = (args) => <AboutPage />;
 
 export const Light = Template.bind({});
 Light.args = {
-    
+
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
 
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

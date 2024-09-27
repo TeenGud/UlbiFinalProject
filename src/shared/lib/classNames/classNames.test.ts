@@ -10,10 +10,18 @@ describe('classNames', () => {
     });
 
     test('test 3', () => {
-        expect(classNames('someClass', { hovered: true, scrollable: true }, ['class1', 'class2'])).toBe('someClass class1 class2 hovered scrollable');
+        expect(classNames(
+            'someClass',
+            { hovered: true, scrollable: true },
+            ['class1', 'class2'],
+        )).toBe('someClass class1 class2 hovered scrollable');
     });
 
     test('test 4', () => {
-        expect(classNames('someClass', { hovered: true, scrollable: false }, ['class1', 'class2'])).toBe('someClass class1 class2 hovered');
+        expect(classNames(
+            'someClass',
+            { hovered: true, scrollable: false },
+            ['class1', 'class2'],
+        )).toBe('someClass class1 class2 hovered');
     });
 });
