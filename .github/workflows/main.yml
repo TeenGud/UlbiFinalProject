@@ -21,6 +21,7 @@ jobs:
       - run: npm run eslint
 
         name: styleling
+      - run: npm run stylelint:fix
       - run: npm run stylelint
 
         name: testing
@@ -31,6 +32,6 @@ jobs:
 
         name: build storybook
       - run: npm run build-storybook
-      
+
         name: screenshot testing
       - run: npm run test:ui:ci
