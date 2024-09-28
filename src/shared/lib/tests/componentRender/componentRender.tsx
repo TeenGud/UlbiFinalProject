@@ -10,13 +10,13 @@ export interface componentRenderOptions {
 
 export function componentRender(component: React.ReactNode, options: componentRenderOptions = {}) {
     const {
-        route = '/'
+        route = '/',
     } = options;
     return render(
         <MemoryRouter initialEntries={[options as any]}>
             <I18nextProvider i18n={i18nForTests}>
                 {component}
             </I18nextProvider>
-        </MemoryRouter>
-    )
+        </MemoryRouter>,
+    );
 }
