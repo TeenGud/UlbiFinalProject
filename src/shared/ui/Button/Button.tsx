@@ -28,7 +28,7 @@ export const Button: React.FC<ButtonProps> = ({
     // eslint-disable-next-line react/button-has-type
     <button
         // eslint-disable-next-line max-len
-        className={classNames(cls.Button, { [cls.square]: square, [cls[buttonSize]]: true, [cls[theme]]: true }, [className])}
+        className={classNames(cls.Button, { [cls.square]: square, [cls[theme]]: true }, [className, cls[buttonSize]])}
         {...otherProps}
     >
         {children}

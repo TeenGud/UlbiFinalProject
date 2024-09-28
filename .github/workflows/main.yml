@@ -1,39 +1,57 @@
 name: linting, testing, building
-on: 
+on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-jobs:
-  pipeline:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 20.x ]
 
+jobs:
+  lint:
+    name: Build frontend
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Use Node.js 17
+        uses: actions/setup-node@v1
+        with:
+          node-version: 17
 
-        name: npm install
-      - run: npm install 
+      # Create a env file with a Hawk token to send a release info
+      - name: install modules
+        run: npm install
 
-        name: building
-      - run: npm run build:prod
+      - name: build project
+        run: npm run build:prod
 
-        name: eslint
-      - run: npm run eslint
+      - name: linting typescript
+        run: npm run eslint
 
-        name: styleling
-      - run: npm run stylelint
+      - name: linting styles
+        run: npm run stylelint
 
-        name: testing
-      - run: npm run test
+      - name: testing
+        run: npm run test
 
-        name: storybook
-      - run: npm run storybook
+      - name: build storybook
+        run: npm run build-storybook
 
-        name: build storybook
-      - run: npm run build-storybook
+      - name: screenshot testing
+        run: npm run test:ui:ci
 
-        name: screenshot testing
-      - run: npm run test:ui:ci
+      
+# jobs:
+#   pipeline:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node-version: [ 17.x ]
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Staring Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#           name: install modules
+#           run: npm install
+#           - name: build project
+#           run: npm build
