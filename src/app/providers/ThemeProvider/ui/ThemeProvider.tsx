@@ -7,8 +7,13 @@ type props = {
     children: React.ReactNode
 }
 
-export const ThemeProvider: React.FC<props> = ({ children }) => {
-    const [theme, setTheme] = useState<Theme>(defaultTheme);
+interface ThemeProviderProps {
+    initialTheme?: Theme;
+    children: React.ReactNode;
+}
+
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, initialTheme }) => {
+    const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
     const defaultProps = useMemo(() => ({
         theme,
         setTheme,

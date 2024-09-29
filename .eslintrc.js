@@ -18,6 +18,8 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
+        'i18next',
+        'react-hooks'
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -36,16 +38,25 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'linebreak-style': 0,
         'max-len': ['error', { code: 320 }],
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error"
     },
     overrides: [
         {
             files: [
                 '**/*.test.ts',
                 '**/*.test.tsx',
+                '**/*.stories.tsx',
             ],
             env: {
                 jest: true,
             },
+            rules: {
+                'i18next/no-literal-string': 'off',
+                'max-len': 'off'
+            }
         },
     ],
     globals: {
