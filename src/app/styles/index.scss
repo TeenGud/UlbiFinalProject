@@ -3,7 +3,8 @@
 @import "themes/dark";
 @import "reset";
 
-body {
+.app,
+.app_modal {
   font-size: var(--font-size-m);
   line-height: var(--font-line-m);
   color: var(--primary-color);
