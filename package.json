@@ -20,7 +20,8 @@
     "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
     "visual:report": "npm-run-all visual:report:*",
     "visual:report:json": "node scripts/generate-visual-json-report.js",
-    "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html"
+    "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
