@@ -10,5 +10,8 @@
     "Short language": "Анг",
     "Log in": "Войти",
     "Enter username": "Введите имя",
-    "Enter password": "Введите пароль"
+    "Enter password": "Введите пароль",
+    "Login form": "Форма авторизации",
+    "Wrong login or password": "Неверный логин или пороль",
+    "Log out": "Выйти"
 }

@@ -6,10 +6,15 @@
   "Enter username": "Enter username",
   "Language": "Language",
   "Log in": "Log in",
+  "Log out": "Log out",
+  "Login form": "Login form",
   "Main page": "Main page",
   "Page not found": "Page not found",
   "Reload page": "Reload page",
   "Something went wrong": "Something went wrong",
   "Throw error": "Throw error",
+  "Wrong": "",
+  "Wrong login or password": "",
+  "error": "",
   "toggle": "toggle"
 }

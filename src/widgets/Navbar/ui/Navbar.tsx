@@ -4,20 +4,38 @@ import { useCallback, useState } from 'react';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserAuthData, userActions } from 'entities/User';
 
 interface NavbarProps {
     className?: string;
 }
 
 export function Navbar({ className }: NavbarProps) {
+    const dispatch = useDispatch();
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
+    const authData = useSelector(getUserAuthData);
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
     }, []);
     const onShowModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
+    const onLogout = useCallback(() => {
+        dispatch(userActions.logout())
+    }, [dispatch]);
+    if (authData) {
+        return (
+            <div className={classNames(cls.Navbar, {}, [className])}>
+                <Button theme={ThemeButton.OUTLINE} className={cls.links} type="button" onClick={onLogout}>
+                    {t('Log out')}
+                </Button>
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            </div>
+        )
+    }
+
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <Button theme={ThemeButton.OUTLINE} className={cls.links} type="button" onClick={onShowModal}>
