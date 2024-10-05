@@ -21,7 +21,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: ThemeButton;
     square?: boolean,
     buttonSize?: ButtonSize,
-    disabled?: boolean 
+    disabled?: boolean
 }
 export const Button: React.FC<ButtonProps> = ({
     className, children, theme, square, buttonSize, disabled, ...otherProps
@@ -29,7 +29,9 @@ export const Button: React.FC<ButtonProps> = ({
     // eslint-disable-next-line react/button-has-type
     <button
         // eslint-disable-next-line max-len
-        className={classNames(cls.Button, { [cls.square]: square, [cls.disabled]: disabled, [cls[theme]]: true }, [className, cls[buttonSize]])} type='button' disabled={disabled}
+        className={classNames(cls.Button, { [cls.square]: square, [cls.disabled]: disabled, [cls[theme]]: true }, [className, cls[buttonSize]])}
+        type="button"
+        disabled={disabled}
         {...otherProps}
     >
         {children}

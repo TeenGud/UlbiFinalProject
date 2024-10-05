@@ -84,5 +84,5 @@ export const Disabled = Template.bind({});
 Disabled.args = {
     children: '>',
     theme: ThemeButton.OUTLINE,
-    disabled: true
+    disabled: true,
 };

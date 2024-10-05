@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useCallback, useState } from 'react';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
-import cls from './Navbar.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;
@@ -23,7 +23,7 @@ export function Navbar({ className }: NavbarProps) {
         setIsAuthModal(true);
     }, []);
     const onLogout = useCallback(() => {
-        dispatch(userActions.logout())
+        dispatch(userActions.logout());
     }, [dispatch]);
     if (authData) {
         return (
@@ -31,9 +31,9 @@ export function Navbar({ className }: NavbarProps) {
                 <Button theme={ThemeButton.OUTLINE} className={cls.links} type="button" onClick={onLogout}>
                     {t('Log out')}
                 </Button>
-                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+                {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
             </div>
-        )
+        );
     }
 
     return (
